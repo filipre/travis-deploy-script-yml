@@ -3,6 +3,6 @@ language: go
 deploy:
   # skip_cleanup: true
   provider: script
-  script: ./script.sh
+  script: /bin/sh script.sh
   on:
     branch: master

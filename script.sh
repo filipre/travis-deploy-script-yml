@@ -1,5 +1,3 @@
-#!/bin/sh
-
 echo "To kill a fly with a sledge-hammer. [1]\n
 Theorem. n√2 is irrational for every n ≥ 3.
 Proof. Suppose n√2 is rational, say n√2 = p / q.
