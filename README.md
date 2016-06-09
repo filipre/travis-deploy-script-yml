@@ -3,11 +3,33 @@
 `.travis.yml` file for using the script provider inside the `deploy` section.
 
 ## How to:
-
-1. Make script executable: `chmod +x script.sh`
+If you use a shebang inside your script (e.g. `#!/bin/sh`):
+1. Make your script executable: `chmod +x script.sh`
 2. Use a relative path: `script: ./script.sh`
 
+```yml
+deploy:
+  provider: script
+  script: ./script.sh
+  on:
+    branch: master
+```
+
+If you use another program to call your files:
+1. Make sure that the program is executable and you use the right path
+2. That's it!
+
+```yml
+deploy:
+  provider: script
+  script: /bin/sh script.sh
+  on:
+    branch: master
+```
+
 ## Experiments
+**worked**: Build exited with `0` (and you should see the great proof from [[1]](http://mathoverflow.net/a/42519))
+**failed**: Exit code is unequal `0` (like exit code `127`)
 
 ### Using a Shebang
 We imply that the program in the shebang is executable
@@ -20,4 +42,4 @@ We imply that the program in the shebang is executable
 ### Without Using a Shebang
 We use `/bin/sh` as program to call our script. We imply that the *program* is executable.
 
-- [ ] *Script* not executable, file name only, no quotes: **na** (na)
+- [x] *Script* not executable, file name only, no quotes: **worked** ([Travis log](https://travis-ci.org/filipre/travis-deploy-script-yml/builds/136525143))
