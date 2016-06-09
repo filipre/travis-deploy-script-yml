@@ -1,9 +1,9 @@
 # Travis deploy script provider
-
 `.travis.yml` file for using the script provider inside the `deploy` section.
 
 ## How to:
 If you use a shebang inside your script (e.g. `#!/bin/sh`):
+
 1. Make your script executable: `chmod +x script.sh`
 2. Use a relative path: `script: ./script.sh`
 
@@ -16,6 +16,7 @@ deploy:
 ```
 
 If you use another program to call your files:
+
 1. Make sure that the program is executable and you use the right path
 2. That's it!
 
@@ -29,6 +30,7 @@ deploy:
 
 ## Experiments
 **worked**: Build exited with `0` (and you should see the great proof from [[1]](http://mathoverflow.net/a/42519))
+
 **failed**: Exit code is unequal `0` (like exit code `127`)
 
 ### Using a Shebang
