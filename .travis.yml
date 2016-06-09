@@ -1,4 +1,4 @@
-language: ruby
+language: go
 
 deploy:
   # skip_cleanup: true
